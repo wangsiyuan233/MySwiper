@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>无缝轮播</title>
+  <title>无缝轮播进化版</title>
   <style type="text/css">
 
     *{margin:0;padding:0;}
@@ -61,33 +61,55 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $('.images > img:nth-child(1)').addClass('current')
-    $('.images > img:nth-child(2)').addClass('enter')
-    $('.images > img:nth-child(3)').addClass('enter')
-    $('.images > img:nth-child(4)').addClass('enter')
-    $('.images > img:nth-child(5)').addClass('enter')
 
-    let n = 1
-    // setInterval(()=>{},2300)
-    setInterval(()=>{ //避免图片从窗口穿过去
-        $(`.images > img:nth-child(${x(n)})`).removeClass('current').addClass('leave')
-        // .one('',()=>{})
-        .one('transitionend', (e)=>{ //${x(n)}) ????
-            $(e.currentTarget).removeClass('leave').addClass('enter')
-        })
-    $(`.images > img:nth-child(${x(n+1)})`).removeClass('enter').addClass('current')//x是什么？
-    n += 1
-    },2300)
 
-    function x(n){
-        if(n>5){
-            n = n%5
-            if (n===0){
-              n =5
-            }
+let n
+// 第一步：各就各位
+chushihua()
+// 第二步：让左边的图片（leave状态）到右边去（enter状态）
+setInterval(()=>{
+    makeLeave(getImage(n))
+    .one('transitionend', (e)=>{
+        makeEnter($(e.currentTarget))
+})
+// 把下一张变成current状态
+makeCurrent(getImage(n+1))
+n += 1
+},3000)
+
+function x(n){
+    if(n>5){
+        n = n%5
+        if (n===0){
+          n =5
         }
-    return n
     }
+return n
+}
+
+
+// 下面可以不看
+function chushihua(){
+    n = 1
+    $(`.images > img:nth-child(${n})`).addClass('current')
+    .siblings().addClass('enter')
+}
+
+function getImage(n){
+    return $(`.images > img:nth-child(${x(n)})`)
+}
+
+
+// $node 是什么意思？
+function makeCurrent($node){
+    return $node.removeClass('enter leave').addClass('current')
+}
+function makeLeave($node){
+    return $node.removeClass('enter current').addClass('leave')
+}
+function makeEnter($node){
+    return $node.removeClass('leave current').addClass('enter')
+}
 </script>
 
 
