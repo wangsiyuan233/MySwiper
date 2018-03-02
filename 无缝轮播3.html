@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>无缝的轮播终极</title>
+
+<style type="text/css">
+*{margin:0;padding:0;}
+*{box-sizing: border-box;}
+
+.window{
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.images{
+  display: flex;
+  transition: all 1s;
+}
+.images > img{
+  width: 100%;
+}
+.button1{
+    border-radius: 50%;
+    padding: 5px;
+    margin: 10px;
+    background: 0,0,0,0,rgba(0,0,0,.15)
+}
+#previous{
+    margin: 20px;
+    background:
+}
+
+#next{
+    margin: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="window">
+      <div id="slides" class="images">
+          <img src="./4001.png" alt="图片" width="400" height="400">
+          <img src="./4002.png" alt="图片" width="400" height="400">
+          <img src="./4003.png" alt="图片" width="400" height="400">
+          <img src="./4004.png" alt="图片" width="400" height="400">
+      </div>
+    </div>
+
+    <div id=buttonWrapper style="text-align:center;">
+      <button class="button1">1</button>
+      <button class="button1">2</button>
+      <button class="button1">3</button>
+      <button class="button1">4</button>
+    </div>
+    <div id="controls" style="text-align:center;">
+      <button id="previous">上一张</button>
+      <button id="next">下一张</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  let $buttons = $('#buttonWrapper>button')
+  let $slides = $('#slides')
+  let $images = $slides.children('img')
+  let current = 0
+
+  makeFakeSlides()
+  $slides.css({transform:'translateX(-400px)'})
+  bindEvents()
+  $(next).on('click', function(){
+    goToSlide(current+1)
+  })
+  $(previous).on('click', function(){
+    goToSlide(current-1)
+  })
+
+  let timer = setInterval(function(){
+    goToSlide(current+1)
+  },2000)
+  $('.container').on('mouseenter', function(){
+    window.clearInterval(timer)
+  }).on('mouseleave', function(){
+    timer = setInterval(function(){
+      goToSlide(current+1)
+    },2000)
+  })
+
+  function bindEvents(){
+    $('#buttonWrapper').on('click', 'button', function(e){
+      let $button = $(e.currentTarget)
+      let index = $button.index()
+      goToSlide(index)
+    })
+  }
+
+  //重要
+  function goToSlide(index){
+    if(index > $buttons.length-1){
+      index = 0
+    }else if(index <0){
+      index = $buttons.length - 1
+    }
+    console.log('current', 'index')
+    console.log(current, index)
+    if(current === $buttons.length -1 && index === 0){
+      // 最后一张到第一张
+      console.log('here')
+      $slides.css({transform:`translateX(${-($buttons.length + 1) * 400}px)`})
+        .one('transitionend', function(){
+          $slides.hide()
+          $slides.offset() // .offset() 可以触发 re-layout，这是一个高级技术，删掉这行你就会发现 bug，所以只能加上这一行。
+          // 不要写邮件来问我为什么要写 .offset，你自己注释掉上面一行看最后一张到第一张的动画，就知道为什么要加 offset() 了。
+          $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+        })
+
+    }else if(current === 0 && index === $buttons.length - 1){
+      // 第一张到最后一张
+      $slides.css({transform:`translateX(0px)`})
+        .one('transitionend', function(){
+          $slides.hide().offset()
+          $slides.css({transform:`translateX(${-(index+1)*400}px)`}).show()
+        })
+
+    }else{
+      $slides.css({transform:`translateX(${- (index+1) * 400}px)`})
+    }
+    current = index
+  }
+
+  function makeFakeSlides(){
+    let $firstCopy = $images.eq(0).clone(true)
+    let $lastCopy = $images.eq($images.length-1).clone(true)
+
+    $slides.append($firstCopy)
+    $slides.prepend($lastCopy)
+  }
+
+  </script>
+</body>
+</html>
