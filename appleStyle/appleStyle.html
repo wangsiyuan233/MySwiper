@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>appleStyle</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    .container{
+        border: 1px solid rgba(0, 0, 0, .2);
+        width: 933px;
+        overflow: hidden;
+        margin: 50px auto;
+    }
+
+    .images{
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.5s;
+    }
+
+    .buttons > ul{
+        display: flex;
+        justify-content: center;
+        background: url("./images/panel.jpg")
+    }
+    .buttons > ul > li{
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 44px;
+    }
+    .buttons > ul > li:nth-child(odd){
+        border-left: 2px solid rgba(0, 0, 0, .1);
+        border-right: 2px solid rgba(0, 0, 0, .1);
+    }
+    .buttons > ul > li:last-child{
+        border-right: 2px solid rgba(0, 0, 0, .1);
+    }
+    .buttons > ul > li.active{
+        background: url("./images/active_bg.png");
+        background-position: center center;
+        border-color: transparent;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="images">
+            <img src="./images/iPad.png">
+            <img src="./images/iWatch.png">
+            <img src="./images/iMac.png">
+            <img src="./images/AirPods.png">
+        </div>
+        <div class="buttons">
+            <ul>
+                <li class="active"><img src="./images/thumb_ipad.png"></li>
+                <li><img src="./images/thumb_watch.png"></li>
+                <li><img src="./images/thumb_mac.png"></li>
+                <li><img src="./images/thumb_music.png"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    let buttons = $('.container .buttons ul li')
+    let n = 0
+    let size = buttons.length
+    for(let i = 0; i < size; i++){
+        $(buttons[i]).on('click',function(e){
+            let index = i
+            let slideWidth = i * -933
+            slide(slideWidth)
+            activeButton(i)
+            n = index
+        })
+    }
+
+    let timer = setTimer()
+
+
+    $('.images').on('mouseenter',function(){
+        window.clearInterval(timer)
+    })
+    $('.images').on('mouseleave',function(){
+        timer = setTimer()
+    })
+
+
+
+    function slide(slideWidth){
+        $('.images').css({
+            transform: `translateX(${slideWidth}px)`
+        })
+    }
+    function activeButton(i){
+        buttons.eq(i).addClass('active').siblings('.active').removeClass('active')
+    }
+
+    function setTimer(){
+        return setInterval(function(){
+            buttons.eq(n%size).trigger('click')
+            n += 1
+        },1500)
+    }
+
+    </script>
+</body>
+</html>
