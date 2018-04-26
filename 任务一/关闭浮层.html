@@ -58,21 +58,18 @@
 
 let active = false  // 变量 active 记录浮层是否开启
 $('#clickMe').on('click',function(e){
-    active = !active
-    $('#popover').css({
-        display: 'block',
-})
+  active = !active
+  $('#popover').css({display: 'block',})
 
-if(active === true){  // 判断浮层是否开启，若开启则绑定document事件
-    setTimeout(function(){
-        $(document).one('click',function(){
-            $('#popover').css({
-            display: 'none',
-            })
-            active = false  // 关闭浮层之后，将active设置为false
-        })
-    },0)
-}
+  if(active === true){  // 判断浮层是否开启，若开启则绑定document事件
+      setTimeout(function(){
+          $(document).one('click',function(){
+              $('#popover').css({display: 'none',})
+              active = false  // 关闭浮层之后，将active设置为false
+          })
+      },0)
+  }
+
 })
 
 $('#popover').on('click',function(e){

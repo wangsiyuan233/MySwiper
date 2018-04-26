@@ -2,9 +2,8 @@
 ### 任务一：关闭浮层
 
 【平均用时 0.3 天】
-[【百度地址】](http://ife.baidu.com/course/detail/id/90)
-[【我的代码】](https://github.com/wangsiyuan233/IFE2017/tree/master/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task1)
-[【效果预览】](http://wangsiyuan233.cn/IFE2017/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/xiaowei_task1/xiaowei_task1.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%80/%E5%85%B3%E9%97%AD%E6%B5%AE%E5%B1%82.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper//%E4%BB%BB%E5%8A%A1%E4%B8%80/%E5%85%B3%E9%97%AD%E6%B5%AE%E5%B1%82.html)
 
 ### 任务目的
 1. 了解HTML的定义、概念、发展简史
@@ -13,12 +12,15 @@
 4. 理解语义化，合理地使用HTML标签来构建页面
 
 ### 任务描述
-- 参考[示例图](http://7xrp04.com1.z0.glb.clouddn.com/task_1_1_1.jpg)，完成一个HTML页面代码编写（不写CSS，不需要关注样式，只关注文档结构）
+- 本方案在点击时浮层弹出，同时开始监听 document 的点击事件。即在浮层出现的情况下才监听取消浮层事件，且事件只执行一次，执行之后就被回收，不会消耗太多内存。 
+
+- setTimeout(function(){},0) 的作用是告诉JS引擎，完成当前的任务后立即开始执行function()。
+
+-所以，在点击按钮之后，首先执行冒泡过程，冒泡完成之后，执行setTimeout的回调函数，添加document事件监听，此时添加的事件因为冒泡已经完成，不会在冒泡阶段被执行。
+
+-重复开关按钮控制浮层。
+
 ### 任务注意事项
 
-- 只需要完成HTML代码编写，不需要写CSS
-- 示例图仅为参考，不需要完全实现一致，其中的图片、文案均可自行设定
-- 尽可能多地尝试更多的HTML标签
+- 监听document事件只执行一次
 
-### 参考资料
-- [Web相关名词通俗解释](https://www.zhihu.com/question/22689579)
