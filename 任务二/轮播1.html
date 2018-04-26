@@ -2,37 +2,44 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>手动切换</title>
+        <title>轮播1：手动切换</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
         <style>
             .window{
-                overflow: hidden;
-                /* border: 5px solid green; */
-                width: 400px;
+              overflow: hidden;
+              /* border: 5px solid green; */
+              width: 400px;
             }
             .images{
-                display: flex;
-                align-items: flex-start;
-                transition: transform 0.5s;
-                /* border: 3px solid red; */
+              display: flex;
+              align-items: flex-start;
+              transition: transform 0.3s;
+              /* border: 3px solid red; */
             }
             .images > img{
 
             }
+            button{margin: 20px 30px;}
         </style>
     </head>
     <body>
-        <div class="window">
-            <div class="images" id='images'>
-                <img src="./img/4001.png" alt="" width="400">
-                <img src="./img/4002.png" alt="" width="400">
-                <img src="./img/4003.png" alt="" width="400">
-            </div>
-        </div>
-        <button id="p1">我是第一张</button>
-        <button id="p2">我是第二张</button>
-        <button id="p3">我是第三张</button>
-    <script type="text/javascript">
+
+      <div class="window">
+          <div class="images" id='images'>
+              <img src="./img/4001.png" alt="" width="400">
+              <img src="./img/4002.png" alt="" width="400">
+              <img src="./img/4003.png" alt="" width="400">
+          </div>
+      </div>
+
+      <button id="p1">第一张</button>
+      <button id="p2">第二张</button>
+      <button id="p3">第三张</button>
+
+
+      <script type="text/javascript">
+
         $(p1).on('click',function(){
             $(images).css({
                 transform:'translateX(0)'
