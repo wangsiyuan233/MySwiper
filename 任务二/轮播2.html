@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>自动切换优化</title>
+        <title>自动切换原始</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
             .window{
@@ -28,10 +28,10 @@
     <body>
         <div class="window">
             <div class="images" id='images'>
-                <img src="./4001.png" alt="" width="400">
-                <img src="./4002.png" alt="" width="400">
-                <img src="./4003.png" alt="" width="400">
-                <img src="./4004.png" alt="" width="400">
+                <img src="./img/4001.png" alt="" width="400">
+                <img src="./img/4002.png" alt="" width="400">
+                <img src="./img/4003.png" alt="" width="400">
+                <img src="./img/4004.png" alt="" width="400">
             </div>
         </div>
         <span id="buttons">
@@ -43,45 +43,45 @@
 
     <script type="text/javascript">
 
+    // 无限张图片click轮播
     var allButtons = $('#buttons > span')
     for (let i = 0; i < allButtons.length; i++) {
-      $(allButtons[i]).on('click', function(x) {
-        var index = $(x.currentTarget).index()
-        var p = index * -400
-        $('#images').css({
-          transform: 'translate(' + p + 'px)'
+        $(allButtons[i]).on('click', function(x) {
+            var index = $(x.currentTarget).index() //jQ遍历index的sibling
+            var p = index * -400
+            $('#images').css({
+              transform: 'translate(' + p + 'px)'
+            })
+            n = index
+            allButtons.eq(n) //选中某个index，就给它变红
+            .addClass('red')
+            .siblings('.red').removeClass('red')
         })
-        n = index
-        activeButton(allButtons.eq(n))
-      })
     }
 
+    // 自动轮播 + 点击span的时候会变红
     var n = 0;
     var len = allButtons.length
-
-    // 封装setTimer
-    function setTimer() {
-      return setInterval(() => {
-        n += 1
-        allButtons.eq(n % len).trigger('click')
-    }, 1000)
-    }
-
-    // 封装activeButton
-    function activeButton($button) {
-         $button  //没看懂
+    var timerId = setInterval(() => {
+        n ++
+        allButtons.eq(n % len).trigger('click') // trigger是帮用户点击
         .addClass('red')
         .siblings('.red').removeClass('red')
-    }
+    }, 1000)
 
-    //鼠标进（没影响）
+    // 鼠标进去，停止轮播
     $('.window').on('mouseenter', function() {
-      window.clearInterval(timerId)
+        window.clearInterval(timerId)
     })
 
-    //鼠标出（调用setTimer()）
+    // 鼠标出来，又开始轮播
     $('.window').on('mouseleave', function() {
-      timerId = setTimer()
+        timerId = setInterval(() => {
+            n ++
+            allButtons.eq(n % len).trigger('click')
+           .addClass('red')
+           .siblings('.red').removeClass('red')
+       }, 1000)
     })
 
     </script>
