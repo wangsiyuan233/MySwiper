@@ -13,7 +13,7 @@ Jquery实现无缝轮播
 
 
 
-### 任务四：无缝轮播2
+### 任务三：无缝轮播2
 
 【平均用时 0.3 天】
 [【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD2.html)
@@ -27,7 +27,7 @@ Jquery实现无缝轮播
 
 
 
-### 任务五：无缝轮播3
+### 任务三：无缝轮播3
 
 【平均用时 0.4 天】
 [【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD3.html)
