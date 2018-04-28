@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>自动切换原始</title>
+        <title>轮播2：自动切换原始</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
             .window{
@@ -13,7 +13,7 @@
             .images{
                 display: flex;
                 align-items: flex-start;
-                transition: all 0.5s;
+                transition: all 0.3s;
                 /* border: 3px solid red; */
             }
             .images > img{
@@ -23,6 +23,8 @@
             .red{
                 color: red;
             }
+
+            button{margin: 10px; padding: 10px 20px; outline: none;}
         </style>
     </head>
     <body>
@@ -35,16 +37,16 @@
             </div>
         </div>
         <span id="buttons">
-            <span>第1张</span>
-            <span>第2张</span>
-            <span>第3张</span>
-            <span>第4张</span>
+            <button>第1张</button>
+            <button>第2张</button>
+            <button>第3张</button>
+            <button>第4张</button>
         </span>
 
     <script type="text/javascript">
 
     // 无限张图片click轮播
-    var allButtons = $('#buttons > span')
+    var allButtons = $('#buttons > button')
     for (let i = 0; i < allButtons.length; i++) {
         $(allButtons[i]).on('click', function(x) {
             var index = $(x.currentTarget).index() //jQ遍历index的sibling

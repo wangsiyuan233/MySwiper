@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>无缝轮播</title>
+  <title>无缝轮播1</title>
   <style type="text/css">
 
     *{margin:0;padding:0;}
@@ -24,7 +24,7 @@
 
     .images > img{
         width: 100%;
-        transition: all 850ms;
+        transition: all 550ms;
         position: absolute;
         top: 0;
     }
@@ -51,11 +51,11 @@
 
   <div class="window">
     <div class="images">
-      <img src="./img/4001.png" alt="图片" width="400" height="400">
-      <img src="./img/4002.png" alt="图片" width="400" height="400">
-      <img src="./img/4003.png" alt="图片" width="400" height="400">
-      <img src="./img/4004.png" alt="图片" width="400" height="400">
-      <img src="./img/4005.png" alt="图片" width="400" height="400">
+      <img src="./img/4001.png" width="400" height="400">
+      <img src="./img/4002.png" width="400" height="400">
+      <img src="./img/4003.png" width="400" height="400">
+      <img src="./img/4004.png" width="400" height="400">
+      <img src="./img/4005.png" width="400" height="400">
     </div>
   </div>
 
@@ -75,11 +75,11 @@
         .one('transitionend', (e)=>{ //${x(n)}) ????
             $(e.currentTarget).removeClass('leave').addClass('enter')
         })
-    $(`.images > img:nth-child(${x(n+1)})`).removeClass('enter').addClass('current')//x是什么？
-    n += 1
-    },2300)
+        $(`.images > img:nth-child(${x(n+1)})`).removeClass('enter').addClass('current')//x是什么？
+        n += 1
+        },1800)
 
-    function x(n){
+    function x(n){ //x(n) 是统计图片数量的函数
         if(n>5){
             n = n%5
             if (n===0){
