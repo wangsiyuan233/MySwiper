@@ -33,11 +33,13 @@
 	原文说块级元素才能有:before, :after，其实是不妥的，大部分行级元素也可以设置伪元素，但是像img可替换元素，因为其外观和尺寸有外部资源决定，那么如果外部资源正确加载，就会替换掉其内部内容，这时伪元素也会被替换掉，但是当外部资源加载失败时，设置的伪元素是可以起作用的。
 
 
-### 任务二：普通轮播1
+### 任务二：普通轮播
+
+**普通轮播1**
 
 【平均用时 0.2 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C/%E8%BD%AE%E6%92%AD2.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper//%E4%BB%BB%E5%8A%A1%E4%B8%80/%E5%85%B3%E9%97%AD%E6%B5%AE%E5%B1%82.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD1.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD1.html)
 
 ### 任务目的
 Jquery绑定click事件
@@ -46,12 +48,11 @@ Jquery绑定click事件
 完成最简单的手动切换图片
 
 
-
-### 任务三：普通轮播2
+** 普通轮播2**
 
 【平均用时 0.3 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C/%E8%BD%AE%E6%92%AD2.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper//%E4%BB%BB%E5%8A%A1%E4%BA%8C/%E8%BD%AE%E6%92%AD2.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD2.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD2.html)
 
 ### 任务目的
 自动轮播+button也随着切换在变红
@@ -60,12 +61,11 @@ Jquery绑定click事件
 简单的意识流写法，没有函数的封装
 
 
-
-### 任务三：普通轮播2
+** 普通轮播3**
 
 【平均用时 0.4 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C/%E8%BD%AE%E6%92%AD3.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper//%E4%BB%BB%E5%8A%A1%E4%BA%8C/%E8%BD%AE%E6%92%AD3.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD3.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD3.html)
 
 ### 任务目的
 自动轮播+button也随着切换在变红
@@ -74,11 +74,13 @@ Jquery绑定click事件
 将重复的代码封装到不同的函数当中，函数中调用函数。
 
 ## 无缝轮播
-### 任务三：无缝轮播1
+### 任务三：无缝轮播
+
+** 无缝轮播1**
 
 【平均用时 0.2 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD1.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper/任务三/无缝轮播1.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD1.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD1.html)
 
 ### 任务目的
 Jquery实现无缝轮播
@@ -87,12 +89,11 @@ Jquery实现无缝轮播
 - 确定图片数量
 
 
-
-### 任务三：无缝轮播2
+** 无缝轮播2**
 
 【平均用时 0.3 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD2.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper/任务三/无缝轮播2.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD2.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD2.html)
 
 ### 任务目的
 Jquery实现无缝轮播
@@ -102,11 +103,11 @@ Jquery实现无缝轮播
 
 
 
-### 任务三：无缝轮播3
+** 无缝轮播3**
 
 【平均用时 0.4 天】
-[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD3.html)
-[【效果预览】](http://wangsiyuan233.cn/MySwiper/任务三/无缝轮播3.html)
+[【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD3.html)
+[【效果预览】](http://wangsiyuan233.cn/MySwiper/%E4%BB%BB%E5%8A%A1%E4%B8%89%EF%BC%9A%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD3.html)
 
 ### 任务目的
 Jquery实现无缝轮播
