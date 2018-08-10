@@ -1,7 +1,7 @@
 ## 普通轮播
 ### 任务二
 
-**普通轮播1**
+**▲普通轮播1**
 
 【平均用时 0.2 天】
 [【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD1.html)
@@ -15,7 +15,7 @@ Jquery绑定click事件
 
 
 
-**普通轮播2**
+**▲普通轮播2**
 
 【平均用时 0.3 天】
 [【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD2.html)
@@ -29,7 +29,7 @@ Jquery绑定click事件
 
 
 
-**普通轮播3**
+**▲普通轮播3**
 
 【平均用时 0.4 天】
 [【我的代码】](https://github.com/wangsiyuan233/MySwiper/blob/master/%E4%BB%BB%E5%8A%A1%E4%BA%8C%EF%BC%9A%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD/%E6%99%AE%E9%80%9A%E8%BD%AE%E6%92%AD3.html)
